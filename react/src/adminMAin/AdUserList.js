@@ -46,17 +46,11 @@ function AdUserList() {
         return item.cus_company_name.includes(searchWord);
       } else if (filter === "담당자") {
         return item.cus_managet_name.includes(searchWord);
-      } else if (filter === "계약상태") {
-        if(item.pro_status!==null){
-          return item.pro_status.includes(searchWord);
-        }     
       } else if (filter === "전체" && searchWord === "") {
         return item;
       } else if (filter === "전체") {
         return (
-          item.cus_company_name.includes(searchWord)
-          || item.cus_managet_name.includes(searchWord)
-          || item.pro_status.includes(searchWord)
+          item.cus_company_name.includes(searchWord)||item.cus_managet_name.includes(searchWord)
         );
       }
       // return true;
@@ -103,7 +97,6 @@ function AdUserList() {
                             <option className="selecteeop">전체</option>
                             <option className="selecteeop">회사명</option>
                             <option className="selecteeop">담당자</option>
-                            <option className="selecteeop">계약상태</option>
                           </select>
                         </div>
 

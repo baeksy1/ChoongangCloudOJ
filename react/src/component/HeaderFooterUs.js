@@ -133,7 +133,8 @@ function HeaderFooterUs({ checkPermission, state }) {
           <nav className="navbar top-navbar navbar-expand-lg navbar-light">
             <div className="navbar-header">
               <div className="navbar-brand">
-                <a href="index.html"> {info.cus_company_name} </a>
+              <Link to="/user">  {info.cus_company_name} </Link>    
+             
               </div>
 
 
