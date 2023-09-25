@@ -344,8 +344,9 @@ function Login_join(props) {
                             role: 'ROLE_USER'
                         }
                     });
-                    
+
                     window.location.reload();
+
                     
                 } else if (dec.role === 'ROLE_ENGINEER') {
 

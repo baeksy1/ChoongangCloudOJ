@@ -178,13 +178,7 @@ function HeaderFooterAd(props) {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    <img
-                      src="../img/baek.jpg"
-                      alt="user"
-                      className="rounded-circle"
-                      width="50"
-                      height="50"
-                    />
+                    
 
                     <span className="ms-2 d-none d-lg-inline-block">
                       <span></span>
@@ -203,12 +197,7 @@ function HeaderFooterAd(props) {
                     isOpen={modalIsOpen}
                     onRequestClose={() => setModalIsOpen(false)}
                   >
-                    <Link to="#" className="contentIcon">
-                      <div>
-                        <ProfileIcon />
-                      </div>
-                      <span>프로필 보기</span>
-                    </Link>
+                    
 
                     <Link to="#" onClick={logout} className="contentIcon">
                       <div>

@@ -111,7 +111,7 @@ function HeaderFooterEn(props) {
           <nav className="navbar top-navbar navbar-expand-lg navbar-light">
             <div className="navbar-header">
               <div className="navbar-brand">
-                <a href="index.html"> {eng.team_id} </a>
+              <Link to="/engineer"> {eng.team_id}</Link>           
               </div>
 
 
@@ -174,10 +174,7 @@ function HeaderFooterEn(props) {
                                     </span>
                                 </button>
                   <Modal className="modal-content" overlayClassName="modal-overlay" isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
-                    <Link to="#" className="contentIcon">
-                      <div><ProfileIcon /></div>
-                      <span>프로필 보기</span>
-                    </Link>
+
 
                     <Link to="#" onClick={logout} className="contentIcon">
                       <div><LogOutIcon /></div>
@@ -243,7 +240,7 @@ function HeaderFooterEn(props) {
                     <li className="sidebar-item">
                       <NavLink
                         className="sidebar-link "
-                        to="/engineer/newList"
+                        to={`/engineer/newList/${props.userId}`}
                         style={({ isActive }) => (isActive ? ms : undefined)}
                       >
 
