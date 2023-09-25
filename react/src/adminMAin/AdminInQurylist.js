@@ -129,7 +129,7 @@ function AdminInQurylist() {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            {pageInfo && pageInfo.slice(0, -1).map((item, index) => (
+                                            {currentPosts.map((item, index) => (
                                                     <tr key={index}>
                                                         <th scope="row">{index + 1}</th>
                                                         <td><Link to={`/admin/inQuryDetail`} state={{ item }} style={{padding:"0"}} >{item.cs_title}</Link></td>
