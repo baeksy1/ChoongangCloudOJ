@@ -44,4 +44,6 @@ public interface EngLeaderService {
 	//점검요청 확인
 	public void checkInsRequest(String insRequest_num);
     public void changeProStatus(String pro_id);
+    public void updatePro(String por_id);
+  public void updatePro2(String por_id);
 }

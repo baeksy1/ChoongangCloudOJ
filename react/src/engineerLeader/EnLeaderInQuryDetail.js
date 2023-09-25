@@ -170,7 +170,7 @@ function EnLeaderInQuryDetail({ checkPermission }) {
                                             <span className='inq-writer'>등록일자</span>
                                             <span className='inq-writer2'>{formatDateTime(DetailData.cs_regdate)}</span>
                                         </div>
-                                        {checkPermission.role == 'ROLE_ADMIN' || checkPermission.role == 'ROLE_ENGINEER' &&checkPermission.sub!=DetailData.cs_writer?
+                                        {checkPermission.role == 'ROLE_ADMIN' || checkPermission.role == 'ROLE_ENGINEER'|| checkPermission.role == 'ROLE_ENGLEADER' &&checkPermission.sub!=DetailData.cs_writer?
                                             <div style={{ width: "50%", textAlign: "right", marginRight: "50px" }}>
                                                 <button style={{ fontSize: "20px", marginRight: '10px' }} className='answerValue' onClick={answerValue}>답변 여부 등록하기</button>
                                                 <select style={{ fontSize: "20px" }} onChange={(e) => setAnswer(e.target.value)}>

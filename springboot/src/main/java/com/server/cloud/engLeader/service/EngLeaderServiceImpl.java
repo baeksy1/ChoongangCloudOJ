@@ -151,4 +151,17 @@ public class EngLeaderServiceImpl implements EngLeaderService{
         engLeaderMapper.changeProStatus(pro_id);
     }
 
+  @Override
+    public void updatePro(String pro_id){
+        engLeaderMapper.changeProStatus(pro_id);
+    }
+
+
+    @Override
+    public void updatePro2(String pro_id){
+        engLeaderMapper.updatePro2(pro_id);
+    }
+
+
+
 }

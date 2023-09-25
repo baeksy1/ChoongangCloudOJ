@@ -26,7 +26,7 @@ import com.server.cloud.command.CusVO;
 
 import com.server.cloud.command.EngineerVO;
 import com.server.cloud.command.NoticeVO;
-
+import com.server.cloud.engLeader.service.EngLeaderService;
 import com.server.cloud.command.ProjectCusVO;
 import com.server.cloud.command.ServerVO;
 
@@ -34,7 +34,7 @@ import com.server.cloud.command.ProjectDetailVO;
 import com.server.cloud.command.ProjectInfoVO;
 import com.server.cloud.command.QueryVO;
 import com.server.cloud.command.WorkInfoVO;
-
+import com.server.cloud.engLeader.service.EngLeaderService;
 import com.server.cloud.pagenation.Criteria;
 
 @RestController
@@ -48,6 +48,10 @@ public class AdminController {
 	@Autowired
 	@Qualifier("alarmService")
 	private AlarmService alarmService;
+
+  @Autowired
+	@Qualifier("engLeaderService")
+	private EngLeaderService engLeaderService;
 
 	private Criteria cri=new Criteria();
 
@@ -260,11 +264,11 @@ public class AdminController {
 		String pro_id=teamNum.get("pro_id");
 		String team_num=teamNum.get("team_num");
 		String pro_status=teamNum.get("pro_status");
-		System.out.println(teamNum.toString()+"팀넘");
-		System.out.println(pro_id + team_num + "----");
+
 		int result = adminService.inputTeamNum(pro_id, team_num, pro_status);
 		alarmService.assignTeam(team_num);
-		System.out.println(team_num);
+    engLeaderService.updatePro2(pro_id);
+
 
 		return new ResponseEntity<>("ok", HttpStatus.OK);
 	}
