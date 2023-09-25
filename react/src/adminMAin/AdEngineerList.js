@@ -135,13 +135,7 @@ function AdEngineerList() {
                               <td>
                                 <div className="d-flex no-block align-items-center">
                                   <div className="me-3 style={{withd: '20px'}} ">
-                                    <img
-                                      src="../img/widget-table-pic1.jpg"
-                                      alt="user"
-                                      className="rounded-circle"
-                                      width="40"
-                                      height="40"
-                                    />
+                                   
                                   </div>
                                   <div className="me-4" >
                                     <h5 className="text-dark mb-0 font-16 font-weight-medium">
