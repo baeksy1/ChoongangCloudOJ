@@ -17,7 +17,7 @@
 		ON S.PRO_ID = P.PRO_ID 
 		WHERE E.ENG_ENID = #{leader_id}
 		AND S.ENG_ENID IS NULL
-		ORDER BY P.PRO_STARTDATE DESC) limit 5
+		ORDER BY P.PRO_STARTDATE DESC) order by PRO_STARTDATE desc limit 5
 	</select>
 
 	<select id="getInspection">
@@ -187,7 +187,9 @@
   	<update id="checkInsRequest">
   		UPDATE INS_REQUEST SET insRequest_check_yn = 'Y' where insRequest_num = #{insRequest_num};
   	</update>
-  	
+    <update id="changeProStatus">
+    UPDATE PROJECTINFO SET pro_status = '프로젝트 진행중' where pro_id = #{pro_id};
+    </update>
 
   </mapper>
 

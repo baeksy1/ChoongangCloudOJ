@@ -185,7 +185,10 @@ public class AdminServiceImpl implements AdminService{
 	public List<AdminMainVO> getwork() {
 		return adminMapper.getwork();
 	}
-	
+	@Override
+    public List<CsVO>csListAll(){
+        return adminMapper.csListAll();
+    }
 }
 
 

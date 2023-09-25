@@ -146,6 +146,9 @@ public class EngLeaderServiceImpl implements EngLeaderService{
 	public void checkInsRequest(String insRequest_num) {
 		engLeaderMapper.checkInsRequest(insRequest_num);
 	}
-	
+	@Override
+    public void changeProStatus(String pro_id){
+        engLeaderMapper.changeProStatus(pro_id);
+    }
 
 }
