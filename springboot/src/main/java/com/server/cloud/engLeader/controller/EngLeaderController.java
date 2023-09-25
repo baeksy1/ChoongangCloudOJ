@@ -96,7 +96,7 @@ public class EngLeaderController {
 		engLeaderService.registSchedule(eng_enid, server_id);
 		alarmService.assignEngineer(eng_enid); 
 		alarmService.assignClient(pro_id); 
-
+        engLeaderService.changeProStatus(pro_id);
 		return new ResponseEntity<>("ok",HttpStatus.OK);	
 	}
 

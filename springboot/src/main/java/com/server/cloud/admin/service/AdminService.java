@@ -88,7 +88,7 @@ public interface AdminService {
 	public AdminMainVO getAdminMain();
 	public List<AdminMainVO> getInspection();
 	public List<AdminMainVO> getwork();
-
+    public List<CsVO> csListAll();
 }
 
 

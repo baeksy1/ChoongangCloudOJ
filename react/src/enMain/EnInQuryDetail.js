@@ -8,7 +8,7 @@ function EnInQuryDetail({ checkPermission }) {
     const location = useLocation();
     const [DetailData, setDetailData] = useState(location.state.item)
     const [update, setUpdte] = useState(false);
-    const [answer, setAnswer] = useState(DetailData.cs_answer_yn)
+    const [answer, setAnswer] = useState("Y")
     const [form, setForm] = useState({ //수정 사항
         cs_title: DetailData.cs_title,
         cs_content: DetailData.cs_content,
@@ -114,7 +114,7 @@ function EnInQuryDetail({ checkPermission }) {
         const deleteA = { notice_num: DetailData.cs_num, file_name: file.file_name, file_id: file.file_id }
         axios.post("http://13.124.230.133:8888/api/main/inQuryDel", deleteA)
         alert("삭제 되었습니다.")
-        history("/user/inQuryList")
+        history("/engineer/inQuryList")
     }
 
 
@@ -171,12 +171,12 @@ function EnInQuryDetail({ checkPermission }) {
                                             <span className='inq-writer'>등록일자</span>
                                             <span className='inq-writer2'>{formatDateTime(DetailData.cs_regdate)}</span>
                                         </div>
-                                        {checkPermission.role == 'ROLE_ADMIN' || checkPermission.role == 'ROLE_ENGINEER' &&checkPermission.sub!=DetailData.cs_writer?
+                                        {checkPermission.role === 'ROLE_ADMIN' || checkPermission.role === 'ROLE_ENGINEER'||checkPermission.role==='ROLE_ENGLEADER' &&checkPermission.sub!=DetailData.cs_writer?
                                             <div style={{ width: "50%", textAlign: "right", marginRight: "50px" }}>
                                                 <button style={{ fontSize: "20px", marginRight: '10px' }} className='answerValue' onClick={answerValue}>답변 여부 등록하기</button>
                                                 <select style={{ fontSize: "20px" }} onChange={(e) => setAnswer(e.target.value)}>
-                                                    <option value="Y">O</option>
-                                                    <option value="N">X</option>
+                                                    <option value="Y">Y</option>
+                                                    <option value="N">N</option>
                                                 </select>
                                             </div> : null}
                                     </div>
